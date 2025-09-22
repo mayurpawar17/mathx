@@ -1,39 +1,92 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# MathX
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+![pub package](https://img.shields.io/pub/v/mathx.svg)
+![likes](https://img.shields.io/pub/likes/mathx)
+![popularity](https://img.shields.io/pub/popularity/mathx)
+![null safety](https://img.shields.io/badge/null%20safety-supported-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-green)
+![downloads](https://img.shields.io/pub/dm/mathx)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+---
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Description
 
-## Features
+**MathX** is a Dart package for Flutter and Dart projects that provides easy-to-use **geometry and mathematical calculations**.  
+It supports **2D shapes** (area, perimeter, circumference) and is fully **null-safe**. All outputs can be obtained as **double** or **formatted string** for display purposes.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+With MathX, you can calculate areas of **squares, rectangles, triangles, trapezoids, rhombuses, circles, and ellipses** quickly and accurately.
 
-## Getting started
+---
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+## Installation
+
+Add this to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  mathx: ^0.0.1
+```
+
+Then run:
+
+```shell
+flutter pub get
+```
+
+Import the package:
+
+```shell
+import 'package:mathx/mathx.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+import 'package:mathx/mathx.dart';
+
+void main() {
+  final math = MathX();
+
+  // Double outputs
+  print(math.areaSquareValue(5));      // 25.0
+  print(math.areaRectangleValue(8, 4)); // 32.0
+  print(math.areaTriangleValue(6, 4));  // 12.0
+  print(math.areaCircleValue(7));       // 153.93804002589985
+
+  // Formatted string outputs
+  print(math.areaSquare(5));            // "25"
+  print(math.areaRectangle(8, 4));      // "32"
+  print(math.areaTriangle(6, 4));       // "12"
+  print(math.areaCircle(7));            // "153.938"
+}
+
 ```
 
-## Additional information
+## Methods
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+### 2D Shapes - Area
+
+| Method | Description | Returns |
+|--------|------------|---------|
+| `areaSquareValue(length)` | Calculates area of a square | `double` |
+| `areaRectangleValue(width, height)` | Calculates area of a rectangle | `double` |
+| `areaParallelogramValue(base, height)` | Calculates area of a parallelogram | `double` |
+| `areaTriangleValue(base, height)` | Calculates area of a triangle | `double` |
+| `areaTrapezoidValue(base1, base2, height)` | Calculates area of a trapezoid | `double` |
+| `areaRhombusValue(diagonal1, diagonal2)` | Calculates area of a rhombus | `double` |
+| `areaCircleValue(radius)` | Calculates area of a circle | `double` |
+| `areaEllipseValue(a, b)` | Calculates area of an ellipse | `double` |
+
+
+### 2D Shapes - Formatted String
+
+| Method | Description | Returns |
+|--------|------------|---------|
+| `areaSquare(length)` | Calculates area of a square and returns a formatted string | `String` |
+| `areaRectangle(width, height)` | Calculates area of a rectangle and returns a formatted string | `String` |
+| `areaParallelogram(base, height)` | Calculates area of a parallelogram and returns a formatted string | `String` |
+| `areaTriangle(base, height)` | Calculates area of a triangle and returns a formatted string | `String` |
+| `areaTrapezoid(base1, base2, height)` | Calculates area of a trapezoid and returns a formatted string | `String` |
+| `areaRhombus(diagonal1, diagonal2)` | Calculates area of a rhombus and returns a formatted string | `String` |
+| `areaCircle(radius)` | Calculates area of a circle and returns a formatted string | `String` |
+| `areaEllipse(a, b)` | Calculates area of an ellipse and returns a formatted string | `String` |
