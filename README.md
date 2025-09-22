@@ -1,14 +1,12 @@
 # MathX
 
 ![pub package](https://img.shields.io/pub/v/mathx.svg)
-
-[//]: # (![likes]&#40;https://img.shields.io/pub/likes/mathx&#41;)
-
-[//]: # (![popularity]&#40;https://img.shields.io/pub/popularity/mathx&#41;)
 ![null safety](https://img.shields.io/badge/null%20safety-supported-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 [//]: # (![downloads]&#40;https://img.shields.io/pub/dm/mathx&#41;)
+[//]: # (![likes]&#40;https://img.shields.io/pub/likes/mathx&#41;)
+[//]: # (![popularity]&#40;https://img.shields.io/pub/popularity/mathx&#41;)
 
 ---
 
