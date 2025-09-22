@@ -1,7 +1,7 @@
 name: mathx
-description: "A new Flutter package project."
+description: "MathX is a null-safe Dart package for easy geometry calculations (area) with double and formatted string outputs."
 version: 0.0.1
-homepage:
+homepage: https://github.com/mayurpawar17/mathx.git
 
 environment:
   sdk: ^3.7.2

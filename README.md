@@ -11,7 +11,7 @@
 ---
 
 **MathX** is a Dart package for Flutter and Dart projects that provides easy-to-use **geometry and mathematical calculations**.  
-It supports **2D shapes** (area, perimeter, circumference) and is fully **null-safe**. All outputs can be obtained as **double** or **formatted string** for display purposes.
+It supports **2D shapes** (area) and is fully **null-safe**. All outputs can be obtained as **double** or **formatted string** for display purposes.
 
 With MathX, you can calculate areas of **squares, rectangles, triangles, trapezoids, rhombuses, circles, and ellipses** quickly and accurately.
 
