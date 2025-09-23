@@ -1,6 +1,6 @@
 name: mathx
-description: "MathX is a null-safe Dart package for easy geometry calculations (area) with double and formatted string outputs."
-version: 0.0.1
+description: "A simple Flutter package to calculate the area of common shapes like square, rectangle, circle, and triangle etc..."
+version: 0.0.2
 homepage: https://github.com/mayurpawar17/mathx.git
 
 environment:
