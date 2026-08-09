@@ -56,6 +56,10 @@ void main() {
   // 3D outputs (New!)
   print(math.volumeSphereValue(3));     // 113.09733552923255
   print(math.surfaceAreaCylinder(2, 5)); // "87.9646"
+
+  // Educational Explanations (New!)
+  print(math.getFormula('circle'));          // "π × r²"
+  print(math.areaCircleExplanation(5));     // "π × 5² = 78.5398"
 }
 
 ```

@@ -1,21 +1,73 @@
 import 'core/math_formatter.dart';
+import 'core/math_formulas.dart';
+import 'core/math_explanation.dart';
 import 'geometry/two_d_logic.dart';
 import 'geometry/three_d_logic.dart';
 
 /// The main entry point for the MathX library.
-///
-/// This class provides a unified interface for calculating areas, volumes,
-/// and surface areas of various shapes. It supports both raw numerical outputs
-/// and formatted string outputs.
 class MathX {
   final MathFormatter _formatter;
 
-  /// Creates a [MathX] instance.
-  ///
-  /// You can optionally provide a custom [MathFormatter]. If none is provided,
-  /// it defaults to [StandardMathFormatter] (max 4 decimal places).
   MathX({MathFormatter? formatter})
       : _formatter = formatter ?? StandardMathFormatter();
+
+  /// Returns the mathematical formula for a given [shape].
+  ///
+  /// Example: `getFormula('circle')` returns "π × r²"
+  String getFormula(String shape) {
+    switch (shape.toLowerCase()) {
+      case 'square':
+        return MathFormulas.areaSquare;
+      case 'rectangle':
+        return MathFormulas.areaRectangle;
+      case 'triangle':
+        return MathFormulas.areaTriangle;
+      case 'circle':
+        return MathFormulas.areaCircle;
+      case 'parallelogram':
+        return MathFormulas.areaParallelogram;
+      case 'trapezoid':
+        return MathFormulas.areaTrapezoid;
+      case 'rhombus':
+        return MathFormulas.areaRhombus;
+      case 'ellipse':
+        return MathFormulas.areaEllipse;
+      case 'cube':
+        return MathFormulas.volumeCube;
+      case 'sphere':
+        return MathFormulas.volumeSphere;
+      case 'cylinder':
+        return MathFormulas.volumeCylinder;
+      case 'cone':
+        return MathFormulas.volumeCone;
+      default:
+        return 'Formula not found';
+    }
+  }
+
+  // ==========================================
+  // EXPLANATIONS (Step-by-Step)
+  // ==========================================
+
+  /// Step-by-step explanation for circle area.
+  String areaCircleExplanation(double radius) =>
+      MathExplanation.areaCircle(radius, areaCircle(radius));
+
+  /// Step-by-step explanation for square area.
+  String areaSquareExplanation(double side) =>
+      MathExplanation.areaSquare(side, areaSquare(side));
+
+  /// Step-by-step explanation for rectangle area.
+  String areaRectangleExplanation(double l, double w) =>
+      MathExplanation.areaRectangle(l, w, areaRectangle(l, w));
+
+  /// Step-by-step explanation for sphere volume.
+  String volumeSphereExplanation(double radius) =>
+      MathExplanation.volumeSphere(radius, volumeSphere(radius));
+
+  /// Step-by-step explanation for cube volume.
+  String volumeCubeExplanation(double side) =>
+      MathExplanation.volumeCube(side, volumeCube(side));
 
   // ==========================================
   // 2D GEOMETRY - AREA (Returns double)
@@ -29,6 +81,11 @@ class MathX {
 
   /// Area of a triangle given [base] and [height].
   double areaTriangleValue(double base, double height) => TwoDLogic.areaTriangle(base, height);
+
+  /// Area of a triangle given three sides [a], [b], and [c].
+  /// Uses Heron's formula and validates via Triangle Inequality Theorem.
+  double areaTriangleSidesValue(double a, double b, double c) =>
+      TwoDLogic.areaTriangleSides(a, b, c);
 
   /// Area of a circle given its [radius].
   double areaCircleValue(double radius) => TwoDLogic.areaCircle(radius);
@@ -101,6 +158,10 @@ class MathX {
 
   /// Formatted area of a triangle.
   String areaTriangle(double base, double height) => _formatter.format(areaTriangleValue(base, height));
+
+  /// Formatted area of a triangle using three sides.
+  String areaTriangleSides(double a, double b, double c) =>
+      _formatter.format(areaTriangleSidesValue(a, b, c));
 
   /// Formatted area of a circle.
   String areaCircle(double radius) => _formatter.format(areaCircleValue(radius));
