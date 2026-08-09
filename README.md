@@ -13,7 +13,7 @@
 **MathX** is a Dart package for Flutter and Dart projects that provides easy-to-use **geometry and mathematical calculations**.  
 It supports **2D shapes** (area) and is fully **null-safe**. All outputs can be obtained as **double** or **formatted string** for display purposes.
 
-With MathX, you can calculate areas of **squares, rectangles, triangles, trapezoids, rhombuses, circles, and ellipses** quickly and accurately.
+With MathX, you can calculate areas of **squares, rectangles, triangles, trapezoids, rhombuses, circles, and ellipses**, as well as volumes and surface areas of **cubes, prisms, cylinders, cones, spheres, and pyramids** quickly and accurately.
 
 ---
 
@@ -49,17 +49,13 @@ import 'package:mathx/mathx.dart';
 void main() {
   final math = MathX();
 
-  // Double outputs
+  // 2D outputs
   print(math.areaSquareValue(5));      // 25.0
-  print(math.areaRectangleValue(8, 4)); // 32.0
-  print(math.areaTriangleValue(6, 4));  // 12.0
-  print(math.areaCircleValue(7));       // 153.93804002589985
-
-  // Formatted string outputs
-  print(math.areaSquare(5));            // "25"
-  print(math.areaRectangle(8, 4));      // "32"
-  print(math.areaTriangle(6, 4));       // "12"
   print(math.areaCircle(7));            // "153.938"
+
+  // 3D outputs (New!)
+  print(math.volumeSphereValue(3));     // 113.09733552923255
+  print(math.surfaceAreaCylinder(2, 5)); // "87.9646"
 }
 
 ```
@@ -79,16 +75,17 @@ void main() {
 | `areaCircleValue(radius)` | Calculates area of a circle | `double` |
 | `areaEllipseValue(a, b)` | Calculates area of an ellipse | `double` |
 
-
-### 2D Shapes - Formatted String
+### 3D Shapes - Volume & Surface Area (New!)
 
 | Method | Description | Returns |
 |--------|------------|---------|
-| `areaSquare(length)` | Calculates area of a square and returns a formatted string | `String` |
-| `areaRectangle(width, height)` | Calculates area of a rectangle and returns a formatted string | `String` |
-| `areaParallelogram(base, height)` | Calculates area of a parallelogram and returns a formatted string | `String` |
-| `areaTriangle(base, height)` | Calculates area of a triangle and returns a formatted string | `String` |
-| `areaTrapezoid(base1, base2, height)` | Calculates area of a trapezoid and returns a formatted string | `String` |
-| `areaRhombus(diagonal1, diagonal2)` | Calculates area of a rhombus and returns a formatted string | `String` |
-| `areaCircle(radius)` | Calculates area of a circle and returns a formatted string | `String` |
-| `areaEllipse(a, b)` | Calculates area of an ellipse and returns a formatted string | `String` |
+| `volumeCubeValue(side)` | Volume of a cube | `double` |
+| `volumeRectangularPrismValue(l, w, h)` | Volume of a prism | `double` |
+| `volumeCylinderValue(r, h)` | Volume of a cylinder | `double` |
+| `volumeConeValue(r, h)` | Volume of a cone | `double` |
+| `volumeSphereValue(r)` | Volume of a sphere | `double` |
+| `volumeSquarePyramidValue(s, h)` | Volume of a square pyramid | `double` |
+| `surfaceAreaCubeValue(side)` | Surface area of a cube | `double` |
+| `surfaceAreaSphereValue(r)` | Surface area of a sphere | `double` |
+
+*(And many more... all 3D methods also support formatted `String` returns)*
